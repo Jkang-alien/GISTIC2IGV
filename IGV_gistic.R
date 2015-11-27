@@ -1,6 +1,6 @@
-setwd('/home/jun/Programs/GISTIC2.0/melanoma/score.gistic/')
+#setwd('/home/jun/Programs/GISTIC2.0/melanoma/score.gistic/')
 
-filenames <- list.files(path = ".", pattern = NULL, all.files = FALSE,
+filenames <- list.files(path = ".", pattern = '^score_*', all.files = FALSE,
            full.names = FALSE, recursive = FALSE,
            ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
 for (i in filenames){
@@ -8,7 +8,7 @@ for (i in filenames){
   a <- read.delim(i)
   
   index = data.frame(Type = rep('Amp',2), Chromosome = rep(23,2), Start = c(10000001, 30000001),
-                     End = c(20000001, 40000001), X.log10.q.value. = rep(0,2), G.score = c(1,2),
+                     End = c(30000001, 40000001), X.log10.q.value. = rep(0,2), G.score = c(2,4),
                      average.amplitude = rep(0,2), frequency = rep(0,2))
   
   b <- rbind.data.frame(a, index)
